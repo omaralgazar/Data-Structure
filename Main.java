@@ -140,7 +140,7 @@ public class Main {
         int ch = scanner.nextInt();
         scanner.nextLine();
         switch (ch) {
-            case 1 -> {
+            case 1 -> {//determine priority
                 System.out.print("Enter ID of item to prioritize: ");
                 int id = scanner.nextInt();
                 scanner.nextLine();
@@ -171,24 +171,24 @@ public class Main {
 
                     switch (option) {
                         case 1 -> {
-                            // معالجة العنصر
+                            // delete item from queue
                             System.out.println("Deleting: " + pItem);
                             System.out.println("Item removed from queue.");
                         }
                         case 2 -> {
-                            // تغيير الأولوية
+                            //change priority
                             System.out.print("Enter new priority (Urgent/Normal): ");
                             String newPriority = scanner.nextLine();
                             if (!newPriority.equalsIgnoreCase("urgent") && !newPriority.equalsIgnoreCase("normal")) {
                                 System.out.println("Invalid priority. Must be 'Urgent' or 'Normal'.");
                             } else {
-                                queue.enqueue(new Priority(pItem.item, newPriority)); // إعادة إدخاله بالأولوية الجديدة
+                                queue.enqueue(new Priority(pItem.item, newPriority)); //enqueue item with new priority
                                 System.out.println("Priority updated and item re-added to queue.");
                             }
                         }
                         case 3 -> {
-                            // إلغاء الإجراء
-                            queue.enqueue(pItem); // نرجعه للطابور
+                            //cancel
+                            queue.enqueue(pItem); 
                             System.out.println("Cancelled. Item returned to queue.");
                         }
                         default -> System.out.println("Invalid choice.");
