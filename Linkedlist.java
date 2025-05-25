@@ -28,7 +28,7 @@ public class Linkedlist {
             Product deleted = head.data;
             head = head.next;
             if (head == null) {
-                tail = null; // تأكد من تحديث tail أيضًا
+                tail = null; 
             } else {
                 head.prev = null;
             }
@@ -43,7 +43,7 @@ public class Linkedlist {
                 if (current.next != null) {
                     current.next.prev = current;
                 } else {
-                    tail = current; // إذا حذفنا آخر عنصر
+                    tail = current; 
                 }
                 return deleted;
             }
